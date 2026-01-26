@@ -28,11 +28,11 @@ return {
     end,
   },
   {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {},
-  dependencies = {
-    "MunifTanjim/nui.nvim",
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
     }
   },
   {
@@ -46,71 +46,71 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy=false,
     -- dependencies={
-    --   "windwp/nvim-ts-autotag",
-    -- },
-    -- event = { "BufReadPost", "BufNewFile" },
-    build = ":TSUpdate",
-    -- opts = {
-    --   ensure_installed = {
-    --     "lua",
-    --     "vim",
-    --     "vimdoc",
-    --     "html",
-    --     "css",
-    --     "javascript",
-    --     "typescript",
-    --     "tsx",
-    --     "jsx",
-    --     "json",
-    --     "yaml",
-    --     "blade",
-    --     "php",
-    --     "python",
-    --     "markdown",
-    --     "markdown_inline",
-    --     "bash",
-    --     "dockerfile",
-    --   },
-    -- -- highlight = {
-    -- --   enable = true,
-    -- --   additional_vim_regex_highlighting = true,
-    -- --   use_languagetree=true,
-    -- -- },
-    --   -- indent = {
-    --   --   enable = true,
-    --   -- },
-    --   -- autotag = {
-    --   --   enable = true,
-    --   -- },
-    -- },
-  },
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {}
-    end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
-  },
-  {
-    "brenoprata10/nvim-highlight-colors",
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("nvim-highlight-colors").setup({
-        render = "background",
-        enable_tailwind = true,
-        virtual_symbol = "",
-        virtual_symbol_prefix = "",
-        virtual_symbol_suffix = "",
-        exclude_filetypes = {},
-      })
-    end,
-  },
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true,
-    opts={}
-  },
-}
+      --   "windwp/nvim-ts-autotag",
+      -- },
+      -- event = { "BufReadPost", "BufNewFile" },
+      build = ":TSUpdate",
+      -- opts = {
+        --   ensure_installed = {
+          --     "lua",
+          --     "vim",
+          --     "vimdoc",
+          --     "html",
+          --     "css",
+          --     "javascript",
+          --     "typescript",
+          --     "tsx",
+          --     "jsx",
+          --     "json",
+          --     "yaml",
+          --     "blade",
+          --     "php",
+          --     "python",
+          --     "markdown",
+          --     "markdown_inline",
+          --     "bash",
+          --     "dockerfile",
+          --   },
+          -- -- highlight = {
+            -- --   enable = true,
+            -- --   additional_vim_regex_highlighting = true,
+            -- --   use_languagetree=true,
+            -- -- },
+            --   -- indent = {
+              --   --   enable = true,
+              --   -- },
+              --   -- autotag = {
+                --   --   enable = true,
+                --   -- },
+                -- },
+              },
+              {
+                'nvimdev/dashboard-nvim',
+                event = 'VimEnter',
+                config = function()
+                  require('dashboard').setup {}
+                end,
+                dependencies = { {'nvim-tree/nvim-web-devicons'}}
+              },
+              {
+                "brenoprata10/nvim-highlight-colors",
+                event = { "BufReadPost", "BufNewFile" },
+                config = function()
+                  require("nvim-highlight-colors").setup({
+                    render = "background",
+                    enable_tailwind = true,
+                    virtual_symbol = "",
+                    virtual_symbol_prefix = "",
+                    virtual_symbol_suffix = "",
+                    exclude_filetypes = {},
+                  })
+                end,
+              },
+              {
+                'windwp/nvim-autopairs',
+                event = "InsertEnter",
+                config = true,
+                opts={}
+              },
+            }
 

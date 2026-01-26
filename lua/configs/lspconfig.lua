@@ -155,3 +155,15 @@ vim.lsp.config.ast_grep = {
 }
 vim.lsp.enable("ast_grep")
 
+
+------------------------------------------------------
+-- LUA
+------------------------------------------------------
+vim.lsp.lua_ls={
+  on_attach=on_attach(),
+  filetypes={
+    "lua"
+  }
+}
+vim.lsp.enable("lua_ls")
+

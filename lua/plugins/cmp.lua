@@ -21,18 +21,18 @@ return {
         end,
       }
       opts.mapping = cmp.mapping.preset.insert({
-        ["<Up>"] = cmp.mapping.select_prev_item(),
-        ["<Down>"] = cmp.mapping.select_next_item(),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<Up>"]=cmp.mapping.select_prev_item(),
+        ["<Down>"]=cmp.mapping.select_next_item(),
+        ["<Tab>"]=cmp.mapping(function (fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
+            luasnip.expand_or_jumpable()
           else
             fallback()
           end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        end,{"i","s"}),
+        ["<S-Tab>"]=cmp.mapping(function (fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then
@@ -40,8 +40,8 @@ return {
           else
             fallback()
           end
-        end, { "i", "s" }),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        end,{"i","s"}),
+        ["<CR>"]=cmp.mapping.confirm({select=true}),
       })
       opts.sources = cmp.config.sources({
         { name = "nvim_lsp" },
@@ -56,6 +56,5 @@ return {
       )
     end,
   },
-
 }
 
