@@ -5,10 +5,11 @@ require("nvchad.configs.lspconfig").defaults()
 -----------------------------------------------------------
 -- Common on_attach
 -----------------------------------------------------------
-local on_attach = function(client)
-  client.server_capabilities.signatureHelpProvider = false
+local on_attach = function(client, bufnr)
+  if client.server_capabilities then
+    client.server_capabilities.documentFormattingProvider = false
+  end
 end
-
 -----------------------------------------------------------
 -- HTML
 -----------------------------------------------------------
@@ -160,11 +161,9 @@ vim.lsp.enable("ast_grep")
 -- LUA
 ------------------------------------------------------
 vim.lsp.lua_ls={
-  on_attach=on_attach(),
+  on_attach=on_attach,
   filetypes={
     "lua"
   }
 }
 vim.lsp.enable("lua_ls")
-
-
