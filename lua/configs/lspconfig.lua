@@ -167,3 +167,13 @@ vim.lsp.lua_ls={
 }
 vim.lsp.enable("lua_ls")
 
+-- -----------------------------------------------------
+-- -- EJS
+-- -----------------------------------------------------
+-- vim.lsp.emmet_ls={
+--   on_attach=on_attach(),
+--   filetypes={
+--     "ejs","javascript","html"
+--   }
+-- }
+-- vim.lsp.enable("emmet_ls")
