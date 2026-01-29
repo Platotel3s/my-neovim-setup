@@ -45,72 +45,58 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     lazy=false,
-    -- dependencies={
-      --   "windwp/nvim-ts-autotag",
-      -- },
-      -- event = { "BufReadPost", "BufNewFile" },
-      build = ":TSUpdate",
-      -- opts = {
-        --   ensure_installed = {
-          --     "lua",
-          --     "vim",
-          --     "vimdoc",
-          --     "html",
-          --     "css",
-          --     "javascript",
-          --     "typescript",
-          --     "tsx",
-          --     "jsx",
-          --     "json",
-          --     "yaml",
-          --     "blade",
-          --     "php",
-          --     "python",
-          --     "markdown",
-          --     "markdown_inline",
-          --     "bash",
-          --     "dockerfile",
-          --   },
-          -- -- highlight = {
-            -- --   enable = true,
-            -- --   additional_vim_regex_highlighting = true,
-            -- --   use_languagetree=true,
-            -- -- },
-            --   -- indent = {
-              --   --   enable = true,
-              --   -- },
-              --   -- autotag = {
-                --   --   enable = true,
-                --   -- },
-                -- },
-              },
-              {
-                'nvimdev/dashboard-nvim',
-                event = 'VimEnter',
-                config = function()
-                  require('dashboard').setup {}
-                end,
-                dependencies = { {'nvim-tree/nvim-web-devicons'}}
-              },
-              {
-                "brenoprata10/nvim-highlight-colors",
-                event = { "BufReadPost", "BufNewFile" },
-                config = function()
-                  require("nvim-highlight-colors").setup({
-                    render = "background",
-                    enable_tailwind = true,
-                    virtual_symbol = "",
-                    virtual_symbol_prefix = "",
-                    virtual_symbol_suffix = "",
-                    exclude_filetypes = {},
-                  })
-                end,
-              },
-              {
-                'windwp/nvim-autopairs',
-                event = "InsertEnter",
-                config = true,
-                opts={}
-              },
-            }
+    build = ":TSUpdate",
+  },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {}
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("nvim-highlight-colors").setup({
+        render = "background",
+        enable_tailwind = true,
+        virtual_symbol = "",
+        virtual_symbol_prefix = "",
+        virtual_symbol_suffix = "",
+        exclude_filetypes = {},
+      })
+    end,
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true,
+    opts={}
+  },
+{
+  "3rd/image.nvim",
+  event = "VeryLazy",
+  opts = {
+    backend = "kitty",
+
+    max_width_window_percentage = 100,
+    max_height_window_percentage = 100,
+
+    integrations = {
+      markdown = {
+        enabled = true,
+        clear_in_insert_mode = false,
+        download_remote_images = true,
+        only_render_image_at_cursor = true,
+        filetypes = { "markdown" },
+      },
+    },
+    window_overlap_clear_enabled = true,
+    editor_only_render_when_focused = true,
+  },
+}
+
+}
 
