@@ -75,28 +75,45 @@ return {
     config = true,
     opts={}
   },
-{
-  "3rd/image.nvim",
-  event = "VeryLazy",
-  opts = {
-    backend = "kitty",
+  {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    opts = {
+      backend = "kitty",
 
-    max_width_window_percentage = 100,
-    max_height_window_percentage = 100,
+      max_width_window_percentage = 100,
+      max_height_window_percentage = 100,
 
-    integrations = {
-      markdown = {
-        enabled = true,
-        clear_in_insert_mode = false,
-        download_remote_images = true,
-        only_render_image_at_cursor = true,
-        filetypes = { "markdown" },
+      integrations = {
+        markdown = {
+          enabled = true,
+          clear_in_insert_mode = false,
+          download_remote_images = true,
+          only_render_image_at_cursor = true,
+          filetypes = { "markdown" },
+        },
       },
+      window_overlap_clear_enabled = true,
+      editor_only_render_when_focused = true,
     },
-    window_overlap_clear_enabled = true,
-    editor_only_render_when_focused = true,
   },
-}
+  {
+    'akinsho/flutter-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true,
+  },
+  {
+  "L3MON4D3/LuaSnip",
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+  },
+  config = function()
+    require("luasnip.loaders.from_vscode").lazy_load()
+  end,
+},
 
 }
 

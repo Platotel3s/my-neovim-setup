@@ -41,4 +41,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.opt.filetype = "blade"
   end,
 })
+vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+  pattern = {"*.jsx","*.tsx"},
+  callback = function()
+    vim.bo.filetype = "javascriptreact"
+  end
+})
 
